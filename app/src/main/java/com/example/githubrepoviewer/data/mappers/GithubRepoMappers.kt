@@ -8,18 +8,6 @@ import com.example.githubrepoviewer.domain.model.Issue
 import com.example.githubrepoviewer.domain.model.RepositoryDetails
 import com.example.githubrepoviewer.domain.model.Repository
 
-//fun List<RepositoriesResource>.toListRepository(): List<Repository> {
-//    return this.map {
-//        Repository(
-//            id = it.id ?: 0,
-//            name = it.name ?: "",
-//            description = it.description ?: "",
-//            owner = it.owner?.login ?: "",
-//            stars = 0
-//        )
-//    }
-//}
-
 fun List<RepositoriesResource>.toListRepositoryEntity(): List<RepositoryEntity> {
     return this.map {
         RepositoryEntity(
