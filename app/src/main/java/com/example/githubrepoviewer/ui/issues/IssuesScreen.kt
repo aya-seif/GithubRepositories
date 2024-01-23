@@ -88,7 +88,7 @@ fun IssuesContentScreen(issues: List<Issue>, onBackClick: () -> Unit) {
 
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(bottom = 16.dp)
+            contentPadding = PaddingValues(top = 16.dp)
         ) {
             items(issues) { issue ->
                 IssueCard(issue = issue)
@@ -103,15 +103,15 @@ fun IssueCard(issue: Issue) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp)
-            .background(color = CardBackgroundColor, shape = RoundedCornerShape(8.dp))
+            .background(color = CardBackgroundColor, shape = RoundedCornerShape(16.dp))
             .clickable {}
             .padding(16.dp)
     ) {
-        InfoRow("Title:", issue.title)
-        InfoRow("State:", issue.state)
-        InfoRow("Date:", issue.date)
-        InfoRow("Author:", issue.author)
-        InfoRow("Number:", issue.number.toString())
+        InfoRow(stringResource(R.string.title), issue.title)
+        InfoRow(stringResource(R.string.state), issue.state)
+        InfoRow(stringResource(R.string.date), issue.date)
+        InfoRow(stringResource(R.string.author), issue.author)
+        InfoRow(stringResource(R.string.number), issue.number.toString())
     }
 }
 
@@ -122,7 +122,7 @@ fun InfoRow(label: String, value: String) {
             .fillMaxWidth()
             .padding(bottom = 8.dp)
     ) {
-        // Label
+
         Column(
             modifier = Modifier
                 .weight(1f)
@@ -135,15 +135,13 @@ fun InfoRow(label: String, value: String) {
             )
         }
 
-        // Value
         Column(
             modifier = Modifier
-                .weight(1f)
                 .padding(start = 8.dp)
         ) {
             Text(
                 text = value,
-                style = MaterialTheme.typography.titleMedium.copy(color = Color.Black),
+                style = MaterialTheme.typography.titleMedium.copy(color = Green),
                 fontWeight = FontWeight.Bold,
             )
         }

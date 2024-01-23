@@ -9,4 +9,9 @@
     <string name="repository_details">Repository Details</string>
     <string name="back">Back</string>
     <string name="issues">Issues</string>
+    <string name="title">Title:</string>
+    <string name="state">State:</string>
+    <string name="date">Date:</string>
+    <string name="author">Author:</string>
+    <string name="number">Number:</string>
 </resources>
